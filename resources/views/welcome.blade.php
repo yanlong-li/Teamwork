@@ -95,8 +95,12 @@
     @endif
 
     <div class="content">
+
         <div class="title m-b-md">
             烟笼里官网
+        </div>
+        <div class="title">
+            让世界无尽可能
         </div>
 
         <div class="links">
@@ -104,7 +108,7 @@
             <a href="{{url('team')}}">团队管理</a>
             <a href="{{url('news')}}">news</a>
             <a href="{{url('about')}}">about</a>
-            <a href="https://github.com/Yanlong-Li/team">GitHub</a>
+            <a href="https://github.com/Yanlong-LI" target="_blank">GitHub</a>
         </div>
         <div class="affiche">
             <ol type="A">
