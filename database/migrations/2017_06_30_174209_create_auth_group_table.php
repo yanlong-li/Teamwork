@@ -14,7 +14,9 @@ class CreateAuthGroupTable extends Migration
     public function up()
     {
         Schema::create('auth_group', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->tinyInteger('app_id');
             $table->timestamps();
         });
     }
