@@ -74,49 +74,42 @@
 </head>
 <body>
 <div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @if (Auth::check())
-                <a href="{{ url('/home') }}">首页</a>
-                <a href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                    Logout
-                </a>
+    {{--@if (Route::has('login'))--}}
+        {{--<div class="top-right links">--}}
+            {{--@if (Auth::check())--}}
+                {{--<a href="{{ url('/home') }}">首页</a>--}}
+                {{--<a href="{{ route('logout') }}"--}}
+                   {{--onclick="event.preventDefault();--}}
+                                                     {{--document.getElementById('logout-form').submit();">--}}
+                    {{--Logout--}}
+                {{--</a>--}}
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form>
-            @else
-                <a href="{{ url('/login') }}">登陆</a>
-                <a href="{{ url('/register') }}">注册</a>
-            @endif
-        </div>
-    @endif
+                {{--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">--}}
+                    {{--{{ csrf_field() }}--}}
+                {{--</form>--}}
+            {{--@else--}}
+                {{--<a href="{{ url('/login') }}">登陆</a>--}}
+                {{--<a href="{{ url('/register') }}">注册</a>--}}
+            {{--@endif--}}
+        {{--</div>--}}
+    {{--@endif--}}
 
     <div class="content">
 
         <div class="title m-b-md">
-            烟笼里官网
-        </div>
-        <div class="title">
-            让世界无尽可能
+            {{$app->name}}
         </div>
 
         <div class="links">
-            <a href="{{url('blog')}}">blog</a>
-            <a href="{{url('team')}}">团队管理</a>
-            <a href="{{url('news')}}">news</a>
-            <a href="{{url('about')}}">about</a>
-            <a href="https://github.com/Yanlong-LI" target="_blank">GitHub</a>
+            @foreach($apps as $value)
+            <a href="{{url($value->url)}}">{{$value->name}}</a>
+            @endforeach
         </div>
         <div class="affiche">
             <ol type="A">
-                <li>官网同步更新中</li>
-                <li>架构数据库确认</li>
-                <li>官网编写语言及框架确认</li>
-                <li>网站需求规划</li>
-                <li>网站重构方案编写</li>
+                @foreach($list as $value)
+                <li>{{$value->content}}</li>
+                @endforeach
             </ol>
         </div>
     </div>

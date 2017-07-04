@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->tinyInteger('app_id');//app_id  只用于判断，不用于登陆限制
+            $table->tinyInteger('app_id')->nullable();//app_id  只用于判断，不用于登陆限制
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');

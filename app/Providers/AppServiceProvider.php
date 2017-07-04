@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema; //Import Schema
+
+//Import Schema
 
 class AppServiceProvider extends ServiceProvider
 {
